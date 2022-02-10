@@ -43,8 +43,5 @@ table th{
   padding : 20px;
 }
 
-table td{
-  padding : 20px;
-}
 
 </style>

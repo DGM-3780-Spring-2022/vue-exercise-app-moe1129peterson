@@ -1,6 +1,15 @@
 <template>
   <div id= "workingout-table">
       <h1>Workout List</h1>
+      <!-- Input -->
+      <div class = 'd-flex'>
+        <input type = 'text' placeholder='Exercise' class=" form-control">
+        <button class="btn btn-submit rounded-0"></button>
+        <input type = 'text' placeholder='Time' class=" form-control">
+        <input type = 'text' placeholder='Distance' class=" form-control">
+
+      </div>
+
       <table align= "center" border="1" >
         <thead>
           <tr>

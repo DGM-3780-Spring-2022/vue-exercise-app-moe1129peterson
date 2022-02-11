@@ -8,7 +8,7 @@
      <input v-model="time" type="text" placeholder="Enter Time" class="form-control">
      <input v-model="distance" type="text" placeholder="Enter Distance" class="form-control">
 
-     <button @click="submitWorkout" class="btn btn-warning rounded-0">Submit</button>
+     <button @click="submitWorkout" class="btn btn-success rounded-0">Submit</button>
    </div>
 
   <!-- Table -->

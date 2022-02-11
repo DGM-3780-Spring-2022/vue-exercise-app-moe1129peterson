@@ -1,49 +1,91 @@
 <template>
-  <div id= "workingout-table">
-      <h1>Workout List</h1>
-      <!-- Input -->
-      <div class = 'd-flex'>
-        <input type = 'text' placeholder='Exercise' class=" form-control">
-        <button class="btn btn-submit rounded-0"></button>
-        <input type = 'text' placeholder='Time' class=" form-control">
-        <input type = 'text' placeholder='Distance' class=" form-control">
+  <div class="container">
+    <h2 class="text-center mt-5">workout-tracking</h2>
+    
+   <!--  Input -->
+   <div class="d-flex ">
+     <input v-model="workout" type="text" placeholder="Enter Exercise" class="form-control">
+     <input v-model="time" type="text" placeholder="Enter Time" class="form-control">
+     <input v-model="distance" type="text" placeholder="Enter Distance" class="form-control">
 
-      </div>
+     <button @click="submitWorkout" class="btn btn-warning rounded-0">Submit</button>
+   </div>
 
-      <table align= "center" border="1" >
-        <thead>
-          <tr>
-            <th>Exercise</th>
-            <th>Time</th>
-            <th>Distance</th>  
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-             <td>Run</td>
-             <td>5min</td>
-             <td>200m</td>
-          </tr>
-          <tr>
-             <td>Swim</td>
-             <td>10min</td>
-             <td>200m</td>
-          </tr>
-          <tr>
-             <td>Bike</td>
-             <td>5min</td>
-             <td>500m</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Table -->
+     <table class="table table-bordered mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Workout Name</th>
+      <th scope="col">Time</th>
+      <th scope="col">Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(workout, index) in workouts" :key="index">
+      <tb>{{workout.workoutname}}</tb>
+      <td>{{workout.time}}</td>
+      <td>{{workout.distance}}</td>
+      <td>
+      </td>
+      <td>
+        <div class="text-center" @click="deleteWorkout(index)">
+          <span class="fa fa-trash"></span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+   
   </div>
 </template>
 
 <script>
 export default {
-    name: 'workout-tracking'
+    name: 'workout-tracking', 
+    props: {
+      msg: String,
+    },
+
+    data(){
+      return{
+        workout:'',
+        workouts: [
+          {
+            workoutname: "Run", 
+            time:"3min",
+            distance:"1km",
+          },
+          {
+            workoutname: "Swim", 
+            time:"3min",
+            distance:"100m",
+          },
+        ]
+      }
+    },
+
+    methods: {
+      submitWorkout(){
+        if(this.workout.length === 0) return;
+
+        this.workouts.push({
+          workoutname: this.workout,
+          time: this.time,
+          distance:this.distance,
+        })
+      }, 
+
+      deleteWorkout(index){
+        this.workouts.splice(index, 1);
+      }, 
+
+  
+
+    }
 
 }
+
+
 </script>
 
 <style scoped>

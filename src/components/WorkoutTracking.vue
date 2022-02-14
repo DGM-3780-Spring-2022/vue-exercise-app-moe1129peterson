@@ -29,13 +29,9 @@
       <td>{{workout.time}} min</td>
       <td>{{workout.distance}} km</td>
       <td>{{workout.date}}</td>
-      <!--
-      <td>
-        <div class="text-center" @click="deleteWorkout(index)">
-          
-        </div>
-      </td>
-      !-->
+      
+      
+      !
     </tr>
   </tbody>
 </table>
@@ -55,13 +51,9 @@
       <td>{{totalWorkouts}}</td>
       <td>{{totalTimes}}</td>
       <td>{{totalDistances}}</td>
-      <!--
-      <td>
-        <div class="text-center" @click="deleteWorkout(index)">
-          
-        </div>
-      </td>
-      !-->
+      
+      
+      
     </tr>
   </tbody>
 </table>

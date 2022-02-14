@@ -32,7 +32,7 @@
       <!--
       <td>
         <div class="text-center" @click="deleteWorkout(index)">
-          <span class="fa fa-trash"></span>
+          
         </div>
       </td>
       !-->
@@ -58,7 +58,7 @@
       <!--
       <td>
         <div class="text-center" @click="deleteWorkout(index)">
-          <span class="fa fa-trash"></span>
+          
         </div>
       </td>
       !-->
